@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL Nacho Libre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1000;
+        }
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .content-wrapper {
+            position: relative;
+            padding: 20px;
+        }
+        .container {
+            max-width: 2000px;
+			max-height: 8000px;
+            margin: 0 auto;
+            background-color: rgba(87, 233, 235, 0.62);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header {
+            background-color: #f70505;
+            color: #fcfcfc;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .content {
+            line-height: 1.6;
+        }
+        a {
+            color: #101820;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .steelers-link {
+            display: inline-block;
+            margin: 20px 0;
+            background-color: #101820;
+            color: #FFB612;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .steelers-link:hover {
+            background-color: #333;
+            text-decoration: none;
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .controls button {
+            background-color: #f70505;
+            color: #fcfcfc;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .autoplay-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video id="bgVideo" class="video-background" autoplay playsinline loop>
+            <source src="Nacho_background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <!-- Autoplay message -->
+    <div id="autoplayMessage" class="autoplay-message">
+        Click anywhere on the page to enable audio
+    </div>
+    
+    <!-- Controls for video -->
+    <div class="controls">
+        <button id="toggleAudioBtn">Unmute Audio</button>
+    </div>
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <header>
+                <h1>Bienvenidos</h1>
+            </header>
+            
+            <section class="content">
+                <h2>About the Paramount Cult Classic</h2>
+                <p><b>
+                   Nacho Libre is a 2006 sports comedy film directed by Jared Hess(Director of Napolean Dynamite) and starring Jack Black as Ignacio,
+				   a monastery cook who secretly becomes a luchador (Nacho) to earn money for orphaned children. Set in Oaxaca Mexico, this quirky cult classic blends 
+				   outlandish humor with heartfelt moments as Nacho battles professional wrestlers while keeping his identity hidden from the monastery. 
+				   The film's distinctive visual style,memorable catchphrases, and Jack Black's committed performance have earned it a dedicated fanbase. 
+				   With its unique soundtrack featuring both Mexican folk music (ft. Mister Loco) and original compositions, Nacho Libre has secured its 
+				   place in pop culture as a wholesome celebration of wrestling, faith, and following one's dreams, making it into this "Project Web Page".
+				   <b/>
+                </p>
+              
+				<div style="margin-top: 70px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;">
+					<img src="Eagle_dive.gif" alt="Nacho Libre GIF" style="max-width: 500px; border-radius: 5px;">
+					<a href="https://www.takerlama.com/products/nacho-libre-ignacio-nacho-halloween-costume-cloak-with-maskready-to-ship-takerlama" target="_blank">
+						<img src="Nacho.jpg" alt="Nacho Libre" style="max-width: 500px; border-radius: 5px;">
+					</a>
+					<img src="Corn.gif" alt="Nacho Libre GIF" style="max-width: 500px; border-radius: 5px;">
+				</div>
+				
+				<div>
+					<a href="https://music.apple.com/us/album/nacho-libre-music-from-the-motion-picture/201168019" class="steelers-link" target="_blank" style="background-color: #f70505; color: #fcfcfc;">Official Nacho Libre Soundtrack</a>
+				<div/>
+				
+				<div style="display: flex; align-items: center; max-width: 600px; gap: 20px;">
+					<a href="https://prowrestling.fandom.com/wiki/Fray_Tormenta" target="_blank">
+						<img src="Tormenta.jpg" alt="Tormenta" style="max-width: 400px; border-radius: 5px;">
+					</a>
+					<p style="max-width: 400px;">
+						Film was loosely based on the life of luchador priest "Fray Tormenta."
+					</p>
+				</div>
+			
+				
+				<a href="http://www.steelers.com" class="steelers-link" target="_blank">Visit the Official Steelers Website</a> 
+				<p>
+                    "COMP476 Computer Networks are Cool" and such.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('bgVideo');
+            const toggleAudioBtn = document.getElementById('toggleAudioBtn');
+            const autoplayMessage = document.getElementById('autoplayMessage');
+            
+            // Initially set video to muted to allow autoplay
+            video.muted = true;
+            
+            // Try to play the video automatically
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('Autoplay started successfully (muted)');
+                    // Show message about clicking to unmute
+                    autoplayMessage.style.display = 'block';
+                    setTimeout(() => {
+                        autoplayMessage.style.display = 'none';
+                    }, 5000); // Hide message after 5 seconds
+                }).catch(error => {
+                    console.error('Autoplay failed:', error);
+                });
+            }
+            
+            // Function to toggle audio
+            function toggleAudio() {
+                if (video.muted) {
+                    video.muted = false;
+                    toggleAudioBtn.textContent = 'Mute Audio';
+                } else {
+                    video.muted = true;
+                    toggleAudioBtn.textContent = 'Unmute Audio';
+                }
+            }
+            
+            // Click button to toggle audio
+            toggleAudioBtn.addEventListener('click', toggleAudio);
+            
+            // Click anywhere on the document to unmute (user interaction)
+            document.addEventListener('click', function(event) {
+                // Only if it's not a click on the audio button (to prevent double-toggling)
+                if (event.target !== toggleAudioBtn) {
+                    if (video.muted) {
+                        video.muted = false;
+                        toggleAudioBtn.textContent = 'Mute Audio';
+                        // Hide the message once unmuted
+                        autoplayMessage.style.display = 'none';
+                    }
+                }
+            });
+            
+            // Handle video errors
+            video.addEventListener('error', function() {
+                console.error('Video error:', video.error);
+            });
+        });
+    </script>
+</body>
+</html>
